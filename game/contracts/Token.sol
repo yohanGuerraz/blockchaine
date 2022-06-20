@@ -25,8 +25,8 @@ contract Token is ERC721, Ownable {
 
 /// @dev Cette fonction permet la création d'un nouveau jeton (un nouvel animal)
 function create_jeton(uint8 domage, uint8 magie, uint8 endurance)public onlyOwner{
-    _safeMint(msg.sender, nextID);
     _tokenDetails[nextID] = Animal(domage, magie,block.timestamp,endurance);
+    _safeMint(msg.sender, nextID);
     nextID++;
 }
 
@@ -35,6 +35,11 @@ function repas (uint256 tokenId)public{
     Animal storage animal = _tokenDetails[nextID];
     require(animal.lastMeal + animal.endurance > block.timestamp);
     animal.lastMeal = block.timestamp;
+}
+
+function _beforeTokenTransfer(address from, address to, uint256 tokenId) internal override {
+    Animal storage animal = _tokenDetails[nextID];
+    require(animal.lastMeal + animal.endurance > block.timestamp); ///l'animal est toujours en vie
 }
 
 }
