@@ -22,11 +22,14 @@ contract Token is ERC721, Ownable {
 
     }
 
+function getTokenDetails(uint256 tokenId)public view returns (Animal memory){
+    return _tokenDetails[tokenId];
+}
 
 /// @dev Cette fonction permet la création d'un nouveau jeton (un nouvel animal)
-function create_jeton(uint8 domage, uint8 magie, uint8 endurance)public onlyOwner{
-    _tokenDetails[nextID] = Animal(domage, magie,block.timestamp,endurance);
+function create_jeton(uint8 domage, uint8 magie, uint256 endurance)public onlyOwner{
     _safeMint(msg.sender, nextID);
+    _tokenDetails[nextID] = Animal(domage, magie,block.timestamp,endurance);
     nextID++;
 }
 
