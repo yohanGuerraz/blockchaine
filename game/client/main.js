@@ -1,11 +1,8 @@
 /** Connect to Moralis server */
-Moralis.serverUrl = "https://k8xonp9zdso2.usemoralis.com:2053/server";
-Moralis.appId = "FUBmCsmgmAV5tekbqguBb3lfpQxkhLiXlg3pXa5G";
+// const serverUrl = "https://k8xonp9zdso2.usemoralis.com:2053/server";
+// const appId = "FUBmCsmgmAV5tekbqguBb3lfpQxkhLiXlg3pXa5G";
+Moralis.start({serverUrl : "https://k8xonp9zdso2.usemoralis.com:2053/server", appId : "FUBmCsmgmAV5tekbqguBb3lfpQxkhLiXlg3pXa5G"});
 const CONTRACT_ADDRESS = "0xab1EdA7fd6bEDECc28E48Fbc03c07249a672Ff6c";
-const appIdref = Moralis.appId;
-const serverUrlref = Moralis.serverUrl;
-Moralis.start({serverUrlref, appIdref});
-
 /** Add from here down */
 async function login() {
   let user = Moralis.User.current();
