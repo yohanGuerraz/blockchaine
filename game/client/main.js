@@ -1,8 +1,10 @@
 /** Connect to Moralis server */
-const serverUrl = "https://k8xonp9zdso2.usemoralis.com:2053/server";
-const appId = "FUBmCsmgmAV5tekbqguBb3lfpQxkhLiXlg3pXa5G";
-const CONTRACT_ADDRESS = "0x2d0bD9be47a10dFcf9e00D7eF7024221a2F898e1";
-Moralis.start({ serverUrl, appId });
+Moralis.serverUrl = "https://k8xonp9zdso2.usemoralis.com:2053/server";
+Moralis.appId = "FUBmCsmgmAV5tekbqguBb3lfpQxkhLiXlg3pXa5G";
+const CONTRACT_ADDRESS = "0xab1EdA7fd6bEDECc28E48Fbc03c07249a672Ff6c";
+const appIdref = Moralis.appId;
+const serverUrlref = Moralis.serverUrl;
+Moralis.start({serverUrlref, appIdref});
 
 /** Add from here down */
 async function login() {
