@@ -41,7 +41,7 @@ async function renderGame() {
 
   //get and Render properties from smart contracts
   let animalId = 0;
-  window.web3 = await Moralis.Web3.enable();
+  window.web3 = await Moralis.enableWeb3();
   let abi = await getabi();
   let contract = new web3.eth.Contract(abi, CONTRACT_ADDRESS);
   let data = await contract.methods.getTokenDetails(animalId).call({from: ethereum.selectedAddress});
