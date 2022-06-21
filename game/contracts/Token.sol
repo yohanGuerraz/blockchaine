@@ -7,7 +7,7 @@ import "../node_modules/@openzeppelin/contracts/access/Ownable.sol";
 contract Token is ERC721, Ownable {
 
     struct Animal {
-        uint8 domage;
+        uint8 degats;
         uint8 magie;
         uint256 lastMeal;
         uint256 endurance;
@@ -27,9 +27,9 @@ function getTokenDetails(uint256 tokenId)public view returns (Animal memory){
 }
 
 /// @dev Cette fonction permet la création d'un nouveau jeton (un nouvel animal)
-function create_jeton(uint8 domage, uint8 magie, uint256 endurance)public onlyOwner{
+function create_jeton(uint8 degats, uint8 magie, uint256 endurance)public onlyOwner{
     _safeMint(msg.sender, nextID);
-    _tokenDetails[nextID] = Animal(domage, magie,block.timestamp,endurance);
+    _tokenDetails[nextID] = Animal(degats, magie,block.timestamp,endurance);
     nextID++;
 }
 
