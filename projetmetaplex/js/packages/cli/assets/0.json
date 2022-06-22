@@ -1,0 +1,20 @@
+{
+    "name": "Art_Street #1",
+    "symbol": "AS",
+    "description": "Collection of 2 numbers on the blockchain. This is the number 1/2.",
+    "seller_fee_basis_points": 500,
+    "image": "0.png",
+    "attributes": [
+      { "trait_type": "Astronote", "value": "crane" },
+      { "trait_type": "Base color", "value": "white" },
+      { "trait_type": "Main color", "value": "red" },
+      { "trait_type": "Pattern", "value": "monster" }
+    ],
+    "properties": {
+      "creators": [
+        { "address": "2bzPpBRXUDCPtHRCoaoiSjvkp9pjiULYSNXbho6GQ4qF", "share": 100 }
+      ],
+      "files": [{ "uri": "0.png", "type": "image/png" }]
+    },
+    "collection": { "name": "Art_Street", "family": "Art_Street" }
+  }
