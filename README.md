@@ -29,7 +29,7 @@ Les jetons ERC20 sont également interchangeables et représentent un seul actif
 
 Il y a quelques différences au niveau du code entre ERC20 et ERC721, par exemple :
 
-Pour ERC20 :
+##### Pour ERC20 :
 
 La fonction totalSupply est publique et donc accessible à tous, elle affiche le nombre total de jetons actuellement en circulation.
 Étant donné que cette fonction est étiquetée avec un modificateur de vue, elle ne consomme pas de gas. De plus, il met à jour la valeur de jeton interne totalSupply_ chaque fois qu'un nouveau jeton est créé.
@@ -56,7 +56,7 @@ function transfer(address to, uint256 amount) public virtual override returns (b
     }
 ```
 
-Pour ERC721 :
+##### Pour ERC721 :
 
 Ici Owns représente la liste complète des ID de jeton d'une adresse particulière. Alors que la fonction balanceOf renvoie le nombre de jetons de cette adresse.
 ```
